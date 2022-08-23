@@ -31,7 +31,7 @@ def reminderBot():
     if clean_index[0] != '11am' or clean_index[1] != '11am':
         message = client.messages.create(
         to="[REDACTED]",
-        from_=[REDACTED]",
+        from_="[REDACTED]",
         body=("Something has gone wrong with the NAF reminder system, please check the logs."))
         print("Message sent to JD - Message ID: " + message.sid)
         print("Something has gone wrong with the NAF reminder system. Function exited.")
@@ -63,13 +63,13 @@ def reminderBot():
         use_time = time_one
         print('As ' + str(datetime.now().replace(minute=0, second=0, microsecond=0)) + ' is before ' + str(time_one) + '. Im going to use ' + str(time_one) + '(time one) for my calculations.')
 
-    #Used for testing - [uncomment min=30 for next hour] [uncomment days=1 for tomorrow]
+    #Used for testing - [uncomment minutes=30 for next hour] [uncomment days=1 for tomorrow]
     #use_time = datetime.now().replace(minute=0, second=0, microsecond=0) + timedelta(days=1)
 
     #Logging variables
     print("The date today is " + str(datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)))
     print("The time right now is " + str(datetime.now().replace(minute=0, second=0, microsecond=0)))
-    print("Time one is " + str(use_time))
+    print("The date/time used for calculation is " + str(use_time))
 
     #Sends one day reminder
     if datetime.now().replace(minute=0, second=0, microsecond=0) == use_time - timedelta(days=1):
